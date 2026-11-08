@@ -1,3 +1,8 @@
+import heroImg from '../assets/images/hero_construction_equipment_1794155688721.jpg';
+import scaffoldingImg from '../assets/images/scaffolding_tubular_1794155688673.jpg';
+import concreteMixerImg from '../assets/images/concrete_mixer_1794155689404.jpg';
+import soilCompactorImg from '../assets/images/soil_compactor_1794155689771.jpg';
+
 export interface Equipment {
   id: string;
   name: string;
@@ -6,6 +11,7 @@ export interface Equipment {
   description: string;
   specs: string[];
   image: string;
+  fallbackImage?: string;
   recommendedDuration: string;
 }
 
@@ -81,7 +87,8 @@ export const siteData = {
       tag: 'Mais Alugado',
       description: 'Torres modulares de encaixe rápido com máxima estabilidade e segurança para trabalhos em altura, pintura, alvenaria e fachadas.',
       specs: ['Pisos metálicos antiderrapantes', 'Rodízios com freio de segurança', 'Sapatas reguláveis e diagonais', 'Conforme norma regulamentadora NR-18'],
-      image: '/src/assets/images/scaffolding_tubular_1794155688673.jpg',
+      image: scaffoldingImg,
+      fallbackImage: '/images/scaffolding_tubular.jpg',
       recommendedDuration: 'Diária, Semanal ou Mensal'
     },
     {
@@ -91,7 +98,8 @@ export const siteData = {
       tag: 'Pronta Entrega',
       description: 'Betoneira profissional de alta capacidade com motor elétrico trifásico/monofásico revisado, basculamento suave e máxima produtividade na mistura.',
       specs: ['Capacidade do tambor: 400 litros', 'Motor com proteção elétrica blindada', 'Chassi reforçado com rodas de borracha maciça', 'Descarga rápida e volante ergonômico'],
-      image: '/src/assets/images/concrete_mixer_1794155689404.jpg',
+      image: concreteMixerImg,
+      fallbackImage: '/images/concrete_mixer.jpg',
       recommendedDuration: 'Semanal ou Mensal'
     },
     {
@@ -101,7 +109,8 @@ export const siteData = {
       tag: 'Revisado',
       description: 'Compactador de percussão a gasolina com alto poder de impacto para valas, sapatas, fundações, aterros e preparo de pisos.',
       specs: ['Força de impacto superior', 'Motor 4 tempos de partida ágil', 'Sapata reforçada para solo denso', 'Filtro de ar duplo para poeira pesada'],
-      image: '/src/assets/images/soil_compactor_1794155689771.jpg',
+      image: soilCompactorImg,
+      fallbackImage: '/images/soil_compactor.jpg',
       recommendedDuration: 'Diária ou Semanal'
     },
     {
@@ -111,7 +120,8 @@ export const siteData = {
       tag: 'Revisado',
       description: 'Ideal para compactação de asfalto a frio, paver, brita, pedriscos e pisos intertravados com acabamento liso e uniforme.',
       specs: ['Base em aço fundido de alta resistência', 'Coxins antivibração para o operador', 'Tanque de água para asfalto', 'Rodas retráteis para transporte fácil'],
-      image: '/src/assets/images/soil_compactor_1794155689771.jpg',
+      image: soilCompactorImg,
+      fallbackImage: '/images/soil_compactor.jpg',
       recommendedDuration: 'Diária ou Semanal'
     },
     {
@@ -121,7 +131,8 @@ export const siteData = {
       tag: 'Alta Demanda',
       description: 'Equipamentos elétricos potentes para demolição de concreto, abertura de canaletas, rasgos em alvenaria e remoção de pisos.',
       specs: ['Encaixe SDS-Max / Hexagonal rápido', 'Acompanha ponteiro e talhadeira afiados', 'Sistema de amortecimento de impacto', 'Excelente relação peso/potência'],
-      image: '/src/assets/images/hero_construction_equipment_1794155688721.jpg',
+      image: heroImg,
+      fallbackImage: '/images/hero_construction_equipment.jpg',
       recommendedDuration: 'Diária ou Semanal'
     },
     {
@@ -131,7 +142,8 @@ export const siteData = {
       tag: 'Pronta Entrega',
       description: 'Elimina bolhas de ar e vazios na concretagem de vigas, pilares, lajes e sapatas, garantindo cura uniforme e resistência estrutural.',
       specs: ['Motor elétrico portátil e leve', 'Mangotes de 35mm e 45mm flexíveis', 'Engate rápido padrão', 'Operação contínua confiável'],
-      image: '/src/assets/images/concrete_mixer_1794155689404.jpg',
+      image: concreteMixerImg,
+      fallbackImage: '/images/concrete_mixer.jpg',
       recommendedDuration: 'Diária ou Semanal'
     }
   ],

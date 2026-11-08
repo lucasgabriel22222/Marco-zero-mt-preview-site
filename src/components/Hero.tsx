@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { MessageSquare, ArrowDown, ShieldCheck, Clock, MapPin } from 'lucide-react';
 import { siteData, buildWhatsAppLink } from '../data/siteData';
 
+import heroImg from '../assets/images/hero_construction_equipment_1794155688721.jpg';
+
 interface HeroProps {
   onOpenQuoteModal?: () => void;
 }
@@ -10,8 +12,8 @@ export function Hero({ onOpenQuoteModal }: HeroProps) {
   const [offsetY, setOffsetY] = useState(0);
 
   useEffect(() => {
+    // Parallax rate 0.35 - smooth and natural
     const handleScroll = () => {
-      // Parallax rate 0.35 - smooth and natural
       setOffsetY(window.scrollY * 0.35);
     };
 
@@ -32,9 +34,14 @@ export function Hero({ onOpenQuoteModal }: HeroProps) {
         }}
       >
         <img
-          src="/src/assets/images/hero_construction_equipment_1794155688721.jpg"
+          src={heroImg}
           alt="Canteiro de obras com andaimes tubulares e equipamentos da Marco Zero MT em Cuiabá"
-          referrerPolicy="no-referrer"
+          onError={(e) => {
+            const target = e.currentTarget;
+            if (target.src !== '/images/hero_construction_equipment.jpg') {
+              target.src = '/images/hero_construction_equipment.jpg';
+            }
+          }}
           className="w-full h-full object-cover object-center scale-105 filter brightness-75 contrast-105"
         />
         {/* Measured dark scrim for WCAG AA 4.5:1 text legibility */}

@@ -75,11 +75,15 @@ export function EquipmentSection({ onOpenQuoteModal }: EquipmentSectionProps) {
                 <img
                   src={item.image}
                   alt={item.name}
-                  referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   onError={(e) => {
-                    // Fallback to neutral patterned container with icon
-                    (e.target as HTMLElement).style.display = 'none';
+                    const target = e.currentTarget;
+                    if (item.fallbackImage && !target.dataset.fallbackTried) {
+                      target.dataset.fallbackTried = 'true';
+                      target.src = item.fallbackImage;
+                    }
                   }}
                 />
                 
