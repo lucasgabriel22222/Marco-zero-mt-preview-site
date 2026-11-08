@@ -1,0 +1,6 @@
+{
+  "name": "Marco Zero MT - Locação de Equipamentos",
+  "description": "Locação de andaimes, betoneiras e equipamentos para construção civil em Cuiabá - MT. Equipamentos revisados, entrega rápida e orçamento ágil no WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
